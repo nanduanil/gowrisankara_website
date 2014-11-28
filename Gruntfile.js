@@ -19,6 +19,7 @@ module.exports = function(grunt) {
           {expand: true, src: ['js/**'], dest: 'Release/'},
           {expand: true, src: ['img/**'], dest: 'Release/'},
           {expand: true, src: ['font-awesome-4.1.0/**'], dest: 'Release/'},
+          {expand: true, src: ['config.xml'], dest: 'Release/'},
         ]
       },
     },
@@ -67,7 +68,18 @@ module.exports = function(grunt) {
         ],
         // the location of the resulting JS file
         dest: 'Release/attraction.html'
-      },    
+      },   
+      gallery: {
+        // the files to concatenate
+        src: [
+          //include libs
+          'base_template_head.html',
+          'gallery.html',
+          'base_template_foot.html',
+        ],
+        // the location of the resulting JS file
+        dest: 'Release/gallery.html'
+      },  
       contact: {
         // the files to concatenate
         src: [
