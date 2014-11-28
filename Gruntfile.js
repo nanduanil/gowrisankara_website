@@ -6,9 +6,90 @@ module.exports = function(grunt) {
 
     clean: {
       build: {
-        src: ["Release"]
+        src: ["Release","GruntModify"]
       },
     },
+
+  concat:{
+      index: {
+        // the files to concatenate
+        src: [
+          //include libs
+          'base_template_head.html',
+          'index.html',
+          'base_template_foot.html',
+        ],
+        // the location of the resulting JS file
+        dest: 'GruntModify/index.html'
+      },
+      testimonial: {
+        // the files to concatenate
+        src: [
+          //include libs
+          'base_template_head.html',
+          'testimonial.html',
+          'base_template_foot.html',
+        ],
+        // the location of the resulting JS file
+        dest: 'GruntModify/testimonial.html'
+      },
+      treatment: {
+        // the files to concatenate
+        src: [
+          //include libs
+          'base_template_head.html',
+          'treatment.html',
+          'base_template_foot.html',
+        ],
+        // the location of the resulting JS file
+        dest: 'GruntModify/treatment.html'
+      },
+      attraction: {
+        // the files to concatenate
+        src: [
+          //include libs
+          'base_template_head.html',
+          'attraction.html',
+          'base_template_foot.html',
+        ],
+        // the location of the resulting JS file
+        dest: 'GruntModify/attraction.html'
+      },   
+      gallery: {
+        // the files to concatenate
+        src: [
+          //include libs
+          'base_template_head.html',
+          'gallery.html',
+          'base_template_foot.html',
+        ],
+        // the location of the resulting JS file
+        dest: 'GruntModify/gallery.html'
+      },  
+      contact: {
+        // the files to concatenate
+        src: [
+          //include libs
+          'base_template_head.html',
+          'contact_us.html',
+          'base_template_foot.html',
+        ],
+        // the location of the resulting JS file
+        dest: 'GruntModify/contact_us.html'
+      },
+      about: {
+        // the files to concatenate
+        src: [
+          //include libs
+          'base_template_head.html',
+          'about_us.html',
+          'base_template_foot.html',
+        ],
+        // the location of the resulting JS file
+        dest: 'GruntModify/about_us.html'
+      },   
+    },
+
 
     copy: {
       build: {
@@ -22,89 +103,78 @@ module.exports = function(grunt) {
           {expand: true, src: ['config.xml'], dest: 'Release/'},
         ]
       },
-    },
 
-    concat:{
       index: {
-        // the files to concatenate
-        src: [
-          //include libs
-          'base_template_head.html',
-          'index.html',
-          'base_template_foot.html',
-        ],
-        // the location of the resulting JS file
-        dest: 'Release/index.html'
+          expand: true, src: ['GruntModify/index.html'],dest: 'Release/',flatten:true,
+            options: {
+              process: function (content, srcpath) {
+                content = content.replace('<title></title>',
+                          '<title>Gowrisankara : House Of Ayurveda , Ayurvedic Homestay, Kerala</title>');
+                content = content.replace('<meta name="description" content="">',
+                          '<meta name="description" content="Gowrisankara:House Of Ayurveda.In Kerala which is also commonly known as "Gods own country",you can find your ayurvedic homestay nicely placed amidst coconut palms and tropical splendour. The principal practitioner is Dr Mini Joy, and Gowrisankara is her family home. She possesses a Bachelors degree in Science (BSc) from the University of Kerala, as well as a Bachelor of Ayurvedic Medicine and Surgery (BAMS) and to date has 25 years experience as a traditional healer. We produce our own medicines and server homely food.>');
+                content = content.replace('<meta name="keyword" content="">',
+                          '<meta name="keyword" content="Homestay Kerala, Ayurvedic Massage, Homely Food, Ayurvedic Doctor, Homestay in Allepey, Ayurvedic Homestay, Gowrisankara">');
+                
+                return content;
+              }
+            },           
+      },
+      about_us: {
+          expand: true, src: ['GruntModify/about_us.html'],dest: 'Release/',flatten:true,
+            options: {
+              process: function (content, srcpath) {
+                content = content.replace('<title></title>','<title>Gowrisankara : About Us</title>');
+                content = content.replace('<meta name="description" content="">',
+                          '<meta name="description" content="Dr. Mini Joy has attained a Bachelors Degree in Science (BSc) from the University of Kerala and a medical degree in Ayurveda. The mother of two children has practised Ayurveda for the past 25 years. During the last 5 years she has created her own home-stay for people to be completely cared for while in therapy. Dr. Mini’s family, Vallabhassery, is one of Kerala’s well-known aristocratic Ayurveda families, who gained knowledge of Ayurveda about two centuries ago.">');
+                return content;
+              }
+            },           
       },
       testimonial: {
-        // the files to concatenate
-        src: [
-          //include libs
-          'base_template_head.html',
-          'testimonial.html',
-          'base_template_foot.html',
-        ],
-        // the location of the resulting JS file
-        dest: 'Release/testimonial.html'
+          expand: true, src: ['GruntModify/testimonial.html'],dest: 'Release/',flatten:true,
+            options: {
+              process: function (content, srcpath) {
+                content = content.replace('<title></title>','<title>Gowrisankara : Testimonials</title>');
+                content = content.replace('<meta name="description" content="">',
+                          '<meta name="description" content="Testimonials from the visitors to our Ayurvedic Homestay in Kerala. They talk about the homely food we server and the authentic ayurvedic medicies">');
+                return content;
+              }
+            },           
       },
       treatment: {
-        // the files to concatenate
-        src: [
-          //include libs
-          'base_template_head.html',
-          'treatment.html',
-          'base_template_foot.html',
-        ],
-        // the location of the resulting JS file
-        dest: 'Release/treatment.html'
+          expand: true, src: ['GruntModify/treatment.html'],dest: 'Release/',flatten:true,
+            options: {
+              process: function (content, srcpath) {
+                content = content.replace('<title></title>','<title>Gowrisankara : Treatments</title>');
+                content = content.replace('<meta name="description" content="">',
+                          '<meta name="description" content="Panchakarma,Uzhichil,Abhyangam,Pizhichil,Navarakizhi,Sirovasthi,Dhara,Udvarthanam">');
+                return content;
+              }
+            },           
       },
-      attraction: {
-        // the files to concatenate
-        src: [
-          //include libs
-          'base_template_head.html',
-          'attraction.html',
-          'base_template_foot.html',
-        ],
-        // the location of the resulting JS file
-        dest: 'Release/attraction.html'
-      },   
+      contact_us: {
+          expand: true, src: ['GruntModify/contact_us.html'],dest: 'Release/',flatten:true,
+            options: {
+              process: function (content, srcpath) {
+                content = content.replace('<title></title>','<title>Gowrisankara : Contact Us</title>');
+                content = content.replace('<meta name="description" content="">',
+                          '<meta name="description" content="Gowrisankara Ayurvedic Homestay in Kerala. Contact Us through our mobile number or email us or send a message from this page. We will get back to you at the soonest.">');
+                return content;
+              }
+            },           
+      },
       gallery: {
-        // the files to concatenate
-        src: [
-          //include libs
-          'base_template_head.html',
-          'gallery.html',
-          'base_template_foot.html',
-        ],
-        // the location of the resulting JS file
-        dest: 'Release/gallery.html'
-      },  
-      contact: {
-        // the files to concatenate
-        src: [
-          //include libs
-          'base_template_head.html',
-          'contact_us.html',
-          'base_template_foot.html',
-        ],
-        // the location of the resulting JS file
-        dest: 'Release/contact_us.html'
+          expand: true, src: ['GruntModify/gallery.html'],dest: 'Release/',flatten:true,
+            options: {
+              process: function (content, srcpath) {
+                content = content.replace('<title></title>','<title>Gowrisankara : Gallery</title>');
+                content = content.replace('<meta name="description" content="">',
+                          '<meta name="description" content="Facilities at Gowrisankara Ayurvedic Homestay in Kerala.">');
+                return content;
+              }
+            },           
       },
-      about: {
-        // the files to concatenate
-        src: [
-          //include libs
-          'base_template_head.html',
-          'about_us.html',
-          'base_template_foot.html',
-        ],
-        // the location of the resulting JS file
-        dest: 'Release/about_us.html'
-      },   
     },
-
-
   });
 
   grunt.loadNpmTasks('grunt-contrib-uglify');
@@ -113,7 +183,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-clean');
 
   // Default task(s).
-  grunt.registerTask('default', ['clean','copy','concat']);
+  grunt.registerTask('default', ['clean','concat','copy']);
 };
 
 /*
