@@ -6,7 +6,8 @@ module.exports = function(grunt) {
 
     clean: {
       build: {
-        src: ["Release","GruntModify"]
+        src: ["Release","GruntModify"],
+        force: true,
       },
     },
 
