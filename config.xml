@@ -1,35 +1,37 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <juiceboxgallery
-	galleryTitle="Juicebox Lite Gallery"
+	galleryTitle="Welcome to Gowrisankara"
 	showOpenButton="FALSE"
 	showExpandButton="FALSE"
 	showThumbsButton="FALSE"
 >
-  <image imageURL="img/images/fb1.jpg"
-	thumbURL="img/thumbs/wide.jpeg"
-	linkURL="img/images/fb1.jpg"
-	linkTarget="_blank">
-	<title>Welcome to Juicebox!</title>
-  </image>
   <image imageURL="img/images/fb2.jpg"
 	thumbURL="img/thumbs/tall.jpeg"
 	linkURL="img/images/fb2.jpg"
 	linkTarget="_blank">
-	<caption><![CDATA[<u><a href="http://www.juicebox.net" target="_blank">Juicebox</a></u> is a free, customizable image gallery. Use it to display your images on any web page in a professional, intuitive and simple way.]]></caption>
+	<title>- - Title - -</title>
+	<caption>- - Caption - -</caption>
+  </image>
+  <image imageURL="img/images/fb1.jpg"
+	thumbURL="img/thumbs/wide.jpeg"
+	linkURL="img/images/fb1.jpg"
+	linkTarget="_blank">
+	<title>- - Title - -</title>
+	<caption>- - Caption - -</caption>
   </image>
   <image imageURL="img/images/fb3.jpg"
 	thumbURL="img/thumbs/wide.jpeg"
 	linkURL="img/images/fb3.jpg"
 	linkTarget="_blank">
-    <title>Universal Playback</title>
-    <caption>Juicebox can be viewed on Windows, Mac, Linux, iPhone, iPad and Android. It works on all modern browsers all the way back to Internet Explorer 6.</caption>
+    <title>- - Title - -</title>
+    <caption>- - Caption - -</caption>
   </image>
   <image imageURL="img/images/tall.jpeg"
 	thumbURL="img/thumbs/tall.jpeg"
 	linkURL="img/images/tall.jpeg"
 	linkTarget="_blank">
-	<title>JuiceboxBuilder</title>
-	<caption><![CDATA[Easily create Juicebox galleries using <u><a href="http://www.juicebox.net/tour/juiceboxbuilder/" target="_blank">JuiceboxBuilder</a></u>, our free desktop app.]]></caption>
+	<title>- - Title - -</title>
+    <caption>- - Caption - -</caption>
   </image>
 </juiceboxgallery>
