@@ -89,6 +89,17 @@ module.exports = function(grunt) {
         // the location of the resulting JS file
         dest: 'GruntModify/about_us.html'
       },   
+      reach_us: {
+        // the files to concatenate
+        src: [
+          //include libs
+          'base_template_head.html',
+          'reach-us.html',
+          'base_template_foot.html',
+        ],
+        // the location of the resulting JS file
+        dest: 'GruntModify/reach-us.html'
+      },   
     },
 
 
@@ -175,6 +186,17 @@ module.exports = function(grunt) {
               }
             },           
       },
+      reach_us: {
+          expand: true, src: ['GruntModify/reach-us.html'],dest: 'Release/',flatten:true,
+            options: {
+              process: function (content, srcpath) {
+                content = content.replace('<title></title>','<title>Gowrisankara : Reach Us</title>');
+                content = content.replace('<meta name="description" content="">',
+                          '<meta name="description" content="">');
+                return content;
+              }
+            },           
+      },      
     },
   });
 
