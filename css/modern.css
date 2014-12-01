@@ -198,3 +198,11 @@ margin-top: 20px;
     /* inline-block space fix */
     margin-right:-4px;
 }
+
+.blue-well {
+    background: rgb(22, 105, 173);
+}
+
+.green-well {
+    background: #8BB18B;
+}
