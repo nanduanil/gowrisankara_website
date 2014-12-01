@@ -122,6 +122,14 @@ background-color: #EDF2DA;
 border: 0 0 1px 0;
 border-color: #3c763d;
 }
+/* 
+@media(min-width:767px) {
+    .nan-navbar {
+        min-height: 65px;
+
+    }
+}
+*/
 
 .nan-navbar-dropdown{
 /*background-color: #ECF3D3;*/
@@ -151,8 +159,10 @@ color: #3c763d;
 
 .nan-button{
 color : #fbfbfb;
-background-color: #8BB18B;  
+background-color: #104070 
+ 
 }
+/*#8BB18B; */
 .nan-move-down{
 margin-top: 20px;
 
@@ -204,5 +214,22 @@ margin-top: 20px;
 }
 
 .green-well {
-    background: #8BB18B;
+    background: #EDF2DA;
 }
+
+/*
+@font-face {
+    font-family: 'gotham_book';
+    src: url('fonts/gotham-book_0-webfont.ttf') format('truetype'),
+    font-weight: normal;
+    font-style: normal;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'gotham_book';
+}
+p, div {
+    font-family: 'gotham_book';
+    font-size: 18;
+}
+*/
